@@ -45,6 +45,9 @@ export default defineConfig({
         }
     },
     server: {
+        hmr: {
+            overlay: false,
+        },
         proxy: {
             '^/weatherforecast': {
                 target: 'https://localhost:7110/',
