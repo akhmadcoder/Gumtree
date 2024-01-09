@@ -84,6 +84,7 @@ namespace Gumtree.Server.Controllers
             return Ok(new AuthResponse
             {
                 Email = userInDb.Email,
+                Username = userInDb.UserName,
                 Token = accessToken,
             });
         }

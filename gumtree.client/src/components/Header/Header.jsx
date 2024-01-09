@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
 
+    const username = localStorage.getItem('accessUsername');
+
     return (
         <div class="container-fluid bg-info">
           <div class="row p-3">
@@ -20,10 +22,15 @@ function Header() {
             </div>
             <div class="col-md-1">
                     <a class="nav-link float-end" href="#">Sell+</a>
-            </div>
-            <div class="col-md-2">
-                    <Link class="nav-link" to="/login">Login / Register</Link>
-            </div>
+                </div>
+                {username ?
+                    (<div class="col-md-2">
+                        <Link class="nav-link" to="/logout">Hi, Logout</Link>
+                    </div>
+                    ) : (<div class="col-md-2">
+                        <Link class="nav-link" to="/login">Login / Register</Link>
+                    </div>)}
+            
             </div>
             
         </div>
