@@ -63,13 +63,13 @@ namespace Gumtree.Server.Controllers
             var managedUser = await _userManager.FindByEmailAsync(request.Email);
             if (managedUser == null)
             {
-                return BadRequest("Bad credentials");
+                return Unauthorized(new { message = "Email not exist in our system." });
             }
 
             var isPasswordValid = await _userManager.CheckPasswordAsync(managedUser, request.Password);
             if (!isPasswordValid)
             {
-                return BadRequest("Bad credentials");
+                return Unauthorized(new { message = "Wrong password." });
             }
 
             var userInDb = _context.Users.FirstOrDefault(u => u.Email == request.Email);

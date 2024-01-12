@@ -25,7 +25,7 @@ function Header() {
                 </div>
                 {username ?
                     (<div class="col-md-2">
-                        <Link class="nav-link" to="/logout">Hi, Logout</Link>
+                        <Link class="nav-link" to="/logout">Hi {username}, Logout</Link>
                     </div>
                     ) : (<div class="col-md-2">
                         <Link class="nav-link" to="/login">Login / Register</Link>
