@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Gumtree.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117123035_initial")]
+    [Migration("20240117213230_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -102,17 +102,58 @@ namespace Gumtree.Server.Migrations
                         {
                             Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5d02eceb-3510-4799-b202-f9f9a4b36971",
+                            ConcurrencyStamp = "cdba7c56-27bf-4f03-8961-051bbb268311",
                             Email = "superadmin@gumtree.uz",
                             EmailConfirmed = true,
                             IsActive = true,
                             IsDeleted = false,
                             LockoutEnabled = false,
+                            NormalizedEmail = "SUPERADMIN@GUMTREE.UZ",
+                            NormalizedUserName = "SUPERADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAECW/L2Tt5DDX9cpvuEGGfVoaLbTdlhidtNj/H8v3JckqbDyHnvTcY19l7Ll5+otDfg==",
                             PhoneNumberConfirmed = false,
-                            Role = 0,
-                            SecurityStamp = "c780aab5-9882-4437-9d0b-d923fc8aa529",
+                            Role = 1,
+                            SecurityStamp = "66559f8a-d279-455f-ad46-83c9d03c45f2",
                             TwoFactorEnabled = false,
                             UserName = "superadmin"
+                        },
+                        new
+                        {
+                            Id = "02174cf0–9412–4cfe-afbf-35f706d32cf6",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "815a2a2d-cecf-449e-8759-e8251ab441c8",
+                            Email = "admin@gumtree.uz",
+                            EmailConfirmed = true,
+                            IsActive = true,
+                            IsDeleted = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@GUMTREE.UZ",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDltf5FITEIv/33ss/c8RJxWAGPBzLNP49ATdrgJ+ZwhE2xIpxouyR8uPpCRTIsCjA==",
+                            PhoneNumberConfirmed = false,
+                            Role = 2,
+                            SecurityStamp = "d9b40868-6a89-4a98-8f97-bc3a168e3c4d",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "02174cf0–9412–4cfe-afbf-33f709d72cf6",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "56e43620-f321-4444-bae8-249bbe99efca",
+                            Email = "user@gumtree.uz",
+                            EmailConfirmed = true,
+                            IsActive = true,
+                            IsDeleted = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@GUMTREE.UZ",
+                            NormalizedUserName = "USER",
+                            PasswordHash = "AQAAAAIAAYagAAAAENNwj2ZDkwejl1ahJFhsPhuwpRqzAm6woKWYUKNp3FkzS0a7z1zHkQ24J6BLPVaf3A==",
+                            PhoneNumberConfirmed = false,
+                            Role = 3,
+                            SecurityStamp = "06b4049b-b0bf-492a-bcb3-119c17dbfb19",
+                            TwoFactorEnabled = false,
+                            UserName = "user"
                         });
                 });
 

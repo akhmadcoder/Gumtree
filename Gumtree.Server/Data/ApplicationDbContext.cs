@@ -37,16 +37,51 @@ namespace Gumtree.Server.Data
         private void SeedData(ModelBuilder modelBuilder)
         {
             //seed superadmin user
-            ApplicationUser user = new ApplicationUser()
+            ApplicationUser superadmin = new ApplicationUser()
             {
                 Id = "02174cf0–9412–4cfe-afbf-59f706d72cf6",
                 UserName = "superadmin",
                 Email = "superadmin@gumtree.uz",
-                EmailConfirmed = true
+                NormalizedEmail = "SUPERADMIN@GUMTREE.UZ",
+                NormalizedUserName = "SUPERADMIN",
+                EmailConfirmed = true,
+                Role = (Enums.Role)1
             };
 
             PasswordHasher<ApplicationUser> passwordHasher = new PasswordHasher<ApplicationUser>();
-            passwordHasher.HashPassword(user, "Admin!1");
+            superadmin.PasswordHash = passwordHasher.HashPassword(superadmin, "Admin!1");
+            modelBuilder.Entity<ApplicationUser>().HasData(superadmin);
+
+            //seed admin user
+            ApplicationUser admin = new ApplicationUser()
+            {
+                Id = "02174cf0–9412–4cfe-afbf-35f706d32cf6",
+                UserName = "admin",
+                Email = "admin@gumtree.uz",
+                NormalizedEmail = "ADMIN@GUMTREE.UZ",
+                NormalizedUserName = "ADMIN",
+                EmailConfirmed = true,
+                Role = (Enums.Role)2
+            };
+
+            PasswordHasher<ApplicationUser> passwordHasherAdmin = new PasswordHasher<ApplicationUser>();
+            admin.PasswordHash = passwordHasherAdmin.HashPassword(admin, "Admin!1");
+            modelBuilder.Entity<ApplicationUser>().HasData(admin);
+
+            //seed user user
+            ApplicationUser user = new ApplicationUser()
+            {
+                Id = "02174cf0–9412–4cfe-afbf-33f709d72cf6",
+                UserName = "user",
+                Email = "user@gumtree.uz",
+                NormalizedEmail = "USER@GUMTREE.UZ",
+                NormalizedUserName = "USER",
+                EmailConfirmed = true,
+                Role = (Enums.Role)3
+            };
+
+            PasswordHasher<ApplicationUser> passwordHasherUser = new PasswordHasher<ApplicationUser>();
+            user.PasswordHash = passwordHasherUser.HashPassword(user, "Admin!1");
             modelBuilder.Entity<ApplicationUser>().HasData(user);
 
             // Seed initial data for Cities

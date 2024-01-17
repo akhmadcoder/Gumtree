@@ -217,7 +217,12 @@ namespace Gumtree.Server.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "IsActive", "IsDeleted", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "Role", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "5d02eceb-3510-4799-b202-f9f9a4b36971", "superadmin@gumtree.uz", true, true, false, false, null, null, null, null, null, false, 0, "c780aab5-9882-4437-9d0b-d923fc8aa529", false, "superadmin" });
+                values: new object[,]
+                {
+                    { "02174cf0–9412–4cfe-afbf-33f709d72cf6", 0, "56e43620-f321-4444-bae8-249bbe99efca", "user@gumtree.uz", true, true, false, false, null, "USER@GUMTREE.UZ", "USER", "AQAAAAIAAYagAAAAENNwj2ZDkwejl1ahJFhsPhuwpRqzAm6woKWYUKNp3FkzS0a7z1zHkQ24J6BLPVaf3A==", null, false, 3, "06b4049b-b0bf-492a-bcb3-119c17dbfb19", false, "user" },
+                    { "02174cf0–9412–4cfe-afbf-35f706d32cf6", 0, "815a2a2d-cecf-449e-8759-e8251ab441c8", "admin@gumtree.uz", true, true, false, false, null, "ADMIN@GUMTREE.UZ", "ADMIN", "AQAAAAIAAYagAAAAEDltf5FITEIv/33ss/c8RJxWAGPBzLNP49ATdrgJ+ZwhE2xIpxouyR8uPpCRTIsCjA==", null, false, 2, "d9b40868-6a89-4a98-8f97-bc3a168e3c4d", false, "admin" },
+                    { "02174cf0–9412–4cfe-afbf-59f706d72cf6", 0, "cdba7c56-27bf-4f03-8961-051bbb268311", "superadmin@gumtree.uz", true, true, false, false, null, "SUPERADMIN@GUMTREE.UZ", "SUPERADMIN", "AQAAAAIAAYagAAAAECW/L2Tt5DDX9cpvuEGGfVoaLbTdlhidtNj/H8v3JckqbDyHnvTcY19l7Ll5+otDfg==", null, false, 1, "66559f8a-d279-455f-ad46-83c9d03c45f2", false, "superadmin" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Categories",
